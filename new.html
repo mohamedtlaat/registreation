@@ -1,63 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registration</title>
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h2>Car Owner Registration</h2>
-            </div>
-            <!-- Start Form -->
-            <form id="form" class="form">
-                <!-- Username -->
-                <div class="form-control">
-                    <label for="username">Username</label>
-                    <input class="usernamee" type="text" placeholder="Your Name" id="username"/>
-                    <i class="circleuser1 fa fa-check-circle"></i>
-                    <i class="circleuser2 fa fa-exclamation-circle"></i>
-                    <i class="fa fa-user"></i>
-                    <small id="name"></small>
-                </div>
-                <div class="form-control">
-                    <label for="username">Email</label>
-                    <input class="eemail" type="email" placeholder="example@ex.com" id="email" />
-                    <i class="circleemail1 fa fa-check-circle"></i>
-                    <i class="circleemail2 fa fa-exclamation-circle"></i>
-                    <i class="fa fa-envelope"></i>
-                    <small id="eemail"></small>
-                </div>
-                <div class="form-control">
-                    <label for="username">Phone Number</label>
-                    <input class="phonee" type="number" placeholder="" id="phone" />
-                    <i class="circlephone1 fa fa-check-circle"></i>
-                    <i class="circlephone2 fa fa-exclamation-circle"></i>
-                    <i class="fa fa-phone"></i>
-                    <small id="phonee"></small>
-                </div>
-                <div class="form-control">
-                    <label for="username">Password</label>
-                    <input class="psw" type="password" placeholder="Password" id="password" onkeyup="validatePassword(this.value);"/>
-                    <i class="circlepsw1 fa fa-check-circle"></i>
-                    <i class="circlepsw2 fa fa-exclamation-circle"></i>
-                    <i class="fa fa-eye" onclick="myFunction()"></i>
-                    <span id="msg"></span>
-                    <small id="psw"></small>
-                </div>
-                <div class="form-control">
-                    <label for="exampleFormControlFile1">personal photo​ (optional).</label>
-                    <input type="file" class="form-control-file" id="photo">
-                </div>
-                <input class="submit" type="submit"></input>
-            </form>
-        </div>
 
-        
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/plg.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Car Owner Registration</h2>
+        </div>
+        <!-- Start Form -->
+        <form id="form" class="form">
+            <!-- Username -->
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input class="usernamee" type="text" placeholder="Your Name" id="username" />
+                <i class="circleuser1 fa fa-check-circle"></i>
+                <i class="circleuser2 fa fa-exclamation-circle"></i>
+                <i class="fa fa-user"></i>
+                <small id="name"></small>
+            </div>
+            <!-- Email -->
+            <div class="form-control">
+                <label for="username">Email</label>
+                <input class="eemail" type="email" placeholder="example@ex.com" id="email" />
+                <i class="circleemail1 fa fa-check-circle"></i>
+                <i class="circleemail2 fa fa-exclamation-circle"></i>
+                <i class="fa fa-envelope"></i>
+                <small id="eemail"></small>
+            </div>
+            <!-- Phone -->
+            <div class="form-control">
+                <label for="username">Phone Number</label>
+                <input class="phonee" type="number" placeholder="" id="phone" />
+                <i class="circlephone1 fa fa-check-circle"></i>
+                <i class="circlephone2 fa fa-exclamation-circle"></i>
+                <i class="fa fa-phone"></i>
+                <small id="phonee"></small>
+            </div>
+            <!-- Password -->
+            <div class="form-control">
+                <label for="username">Password</label>
+                <input class="psw" type="password" placeholder="Password" id="password"
+                    onkeyup="validatePassword(this.value);" />
+                <i class="circlepsw1 fa fa-check-circle"></i>
+                <i class="circlepsw2 fa fa-exclamation-circle"></i>
+                <i class="fa fa-eye" onclick="myFunction()"></i>
+                <span id="msg"></span>
+                <small id="psw"></small>
+            </div>
+            <!-- Personal Photo​ -->
+            <div class="form-control">
+                <label for="exampleFormControlFile1">personal photo​ (optional).</label>
+                <input type="file" class="form-control-file" id="photo">
+            </div>
+            <input class="submit" type="submit"></input>
+        </form>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/plg.js"></script>
+</body>
+
 </html>
