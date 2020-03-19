@@ -17,42 +17,42 @@ var flag4;
 username.addEventListener('blur', e => {
     const val = e.target.value;
     re = /[0-9]/;
-    if(val === '') {
+    if (val === '') {
         $(".usernamee").addClass("errorinput");
         $(".circleuser2").show().addClass("error");
         $("#name").text("* Username cannot be blank *").show().fadeOut(3000);
         $("#name").show().addClass("error");
         setErrorFor(username, '* Username cannot be blank *');
-        flag1=false;
+        flag1 = false;
     } else if (val.length > 40) {
         $(".usernamee").addClass("errorinput");
         $(".circleuser2").show().addClass("error");
         $("#name").text("* Your name is long *").show().fadeOut(3000);
         $("#name").show().addClass("error");
         setErrorFor(username, '* Your name is long *');
-        flag1=false;
+        flag1 = false;
     } else if (val.length < 8) {
         $(".usernamee").addClass("errorinput");
         $(".circleuser2").show().addClass("error");
         $("#name").text("* Your name is short *").show().fadeOut(3000);
         $("#name").show().addClass("error");
         setErrorFor(username, '* Your name is short *');
-        flag1=false;
+        flag1 = false;
     } else if (re.test(val)) {
         $(".usernamee").addClass("errorinput");
         $(".circleuser2").show().addClass("error");
         $("#name").text("* this field must be alphabets only *").show().fadeOut(3000);
         $("#name").show().addClass("error");
         setErrorFor(username, '* this field must be alphabets only *');
-        flag1=false;
+        flag1 = false;
     } else {
         $(".usernamee").addClass("successinput");
         $(".circleuser2").hide();
         $(".circleuser1").show().addClass("success");
         setSuccessFor(username);
-        flag1=true;
+        flag1 = true;
     }
-    
+
 });
 
 /***************** Email Validate ********************/
@@ -60,27 +60,27 @@ username.addEventListener('blur', e => {
 email.addEventListener('blur', e => {
     const val = e.target.value;
 
-    if(val === '') {
+    if (val === '') {
         $(".eemail").addClass("errorinput");
         $(".circleemail2").show().addClass("error");
         $("#eemail").text("* Email cannot be blank *").show().fadeOut(3000);
         $("#eemail").show().addClass("error");
         setErrorFor(email, '* Email cannot be blank *');
-        flag2=false;
-	} else if (!isEmail(val)) {
+        flag2 = false;
+    } else if (!isEmail(val)) {
         $(".eemail").addClass("errorinput");
         $(".circleemail2").show().addClass("error");
         $("#eemail").text("* This email is invalid *").show().fadeOut(3000);
         $("#eemail").show().addClass("error");
         setErrorFor(email, '* Not a valid email *');
-        flag2=false;
-	} else {
+        flag2 = false;
+    } else {
         $(".eemail").addClass("successinput");
         $(".circleemail2").hide();
         $(".circleemail1").show().addClass("success");
         setSuccessFor(email);
-        flag2=true;
-	}
+        flag2 = true;
+    }
 });
 
 /***************** Phone Validate ********************/
@@ -88,26 +88,26 @@ email.addEventListener('blur', e => {
 phone.addEventListener('blur', e => {
     const val = e.target.value;
 
-    if(val === '') {
+    if (val === '') {
         $(".phonee").addClass("errorinput");
         $(".circlephone2").show().addClass("error");
         $("#phonee").text("* Phone cannot be blank *").show().fadeOut(3000);
         $("#phonee").show().addClass("error");
         setErrorFor(phone, '* Phone cannot be blank *');
-        flag3=false;
-	} else if (val.length < 11) {
+        flag3 = false;
+    } else if (val.length < 11) {
         $(".phonee").addClass("errorinput");
         $(".circlephone2").show().addClass("error");
         $("#phonee").text("* This phone number is invalid *").show().fadeOut(3000);
         $("#phonee").show().addClass("error");
         setErrorFor(phone, '* This phone number is invalid *');
-        flag3=false;
+        flag3 = false;
     } else {
         $(".phonee").addClass("successinput");
         $(".circlephone2").hide();
         $(".circlephone1").show().addClass("success");
         setSuccessFor(phone);
-        flag3=true;
+        flag3 = true;
     }
 });
 
@@ -116,26 +116,26 @@ phone.addEventListener('blur', e => {
 password.addEventListener('blur', e => {
     const val = e.target.value;
     // re = /[0-9])/;
-    if(val === '') {
+    if (val === '') {
         $(".psw").addClass("errorinput");
         $(".circlepsw2").show().addClass("error");
         $("#psw").text("* Password cannot be blank *").show().fadeOut(3000);
         $("#psw").show().addClass("error");
         setErrorFor(password, '* Password cannot be blank *');
-        flag4=false;
+        flag4 = false;
     } else if (val.length <= 8) {
         $(".psw").addClass("errorinput");
         $(".circlepsw2").show().addClass("error");
         $("#psw").text("* your password must be at least 8 alphanumeric *").show().fadeOut(3000);
         $("#psw").show().addClass("error");
         setErrorFor(password, '* your password must be at least 8 alphanumeric *');
-        flag4=false;
+        flag4 = false;
     } else {
         $(".psw").addClass("successinput");
         $(".circlepsw2").hide();
         $(".circlepsw1").show().addClass("success");
         setSuccessFor(password);
-        flag4=true;
+        flag4 = true;
     }
 });
 
@@ -144,16 +144,16 @@ password.addEventListener('blur', e => {
 function myFunction() {
     var x = document.getElementById("password");
     if (x.type === "password") {
-      x.type = "text";
+        x.type = "text";
     } else {
-      x.type = "password";
+        x.type = "password";
     }
-  }
+}
 
 /***************** Password Validate Weak or Medium or strong ********************/
 
 function validatePassword(password) {
-                
+
     // Do not show anything when the length of password is zero.
     if (password.length === 0) {
         document.getElementById("msg").innerHTML = "";
@@ -198,13 +198,11 @@ function validatePassword(password) {
 /***************** Form Submit ********************/
 form.addEventListener('submit', e => {
 
-	 e.preventDefault();
-    if(flag4&&flag3&&flag2&&flag1)
-    {
+    e.preventDefault();
+    if (flag4 && flag3 && flag2 && flag1) {
         alert("Your Sign Up is Success")
     }
-    else
-    {
+    else {
         alert("Your Sign Up is not Success")
         $(".usernamee").addClass("errorinput");
         $(".circleuser2").show().addClass("error");
@@ -227,22 +225,22 @@ form.addEventListener('submit', e => {
         $("#psw").show().addClass("error");
         setErrorFor(password, '* Password cannot be blank *');
     }
-	// checkInputs();
+    // checkInputs();
 });
 
 function setErrorFor(input, message) {
-	const formControl = input.parentElement;
-	const small = formControl.querySelector('small');
-	formControl.className = 'form-control error';
-	small.innerText = message;
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    formControl.className = 'form-control error';
+    small.innerText = message;
 }
 
 function setSuccessFor(input) {
-	const formControl = input.parentElement;
-	formControl.className = 'form-control success';
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
 }
-	
+
 function isEmail(email) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 

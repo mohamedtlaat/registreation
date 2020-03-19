@@ -9,6 +9,7 @@ body {
 	min-height: 100vh;
 	margin: 0;
 }
+
 .container {
 	background-color: #fff;
 	border-radius: 5px;
@@ -16,6 +17,8 @@ body {
 	overflow: hidden;
 	width: 400px;
 	max-width: 100%;
+	animation-duration: 2s;
+    animation-delay: 0.5s;
 }
 .header {
 	border-bottom: 1px solid #f0f0f0;
