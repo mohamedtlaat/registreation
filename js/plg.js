@@ -17,38 +17,45 @@ var flag4;
 username.addEventListener('blur', e => {
     const val = e.target.value;
     re = /[0-9]/;
+    
+
     if (val === '') {
-        $(".usernamee").addClass("errorinput");
-        $(".circleuser2").show().addClass("error");
-        $("#name").text("* Username cannot be blank *").show().fadeOut(3000);
-        $("#name").show().addClass("error");
+        $(".usernamee").addClass("errorinput").removeClass("successinput");
+        $(".circleuser2").fadeIn().addClass("error");
+        $(".circleuser1").fadeOut();
+        $("#name").text("* Username cannot be blank *").fadeIn();
+        $("#name").fadeIn().addClass("error");
         setErrorFor(username, '* Username cannot be blank *');
         flag1 = false;
     } else if (val.length > 40) {
-        $(".usernamee").addClass("errorinput");
-        $(".circleuser2").show().addClass("error");
-        $("#name").text("* Your name is long *").show().fadeOut(3000);
-        $("#name").show().addClass("error");
+        $(".usernamee").addClass("errorinput").removeClass("successinput");
+        $(".circleuser2").fadeIn().addClass("error");
+        $(".circleuser1").fadeOut();
+        $("#name").text("* Your name is long *").fadeIn();
+        $("#name").fadeIn().addClass("error");
         setErrorFor(username, '* Your name is long *');
         flag1 = false;
     } else if (val.length < 8) {
-        $(".usernamee").addClass("errorinput");
-        $(".circleuser2").show().addClass("error");
-        $("#name").text("* Your name is short *").show().fadeOut(3000);
-        $("#name").show().addClass("error");
+        $(".usernamee").addClass("errorinput").removeClass("successinput");
+        $(".circleuser2").fadeIn().addClass("error");
+        $(".circleuser1").fadeOut();
+        $("#name").text("* Your name is short *").fadeIn();
+        $("#name").fadeIn().addClass("error");
         setErrorFor(username, '* Your name is short *');
         flag1 = false;
     } else if (re.test(val)) {
-        $(".usernamee").addClass("errorinput");
-        $(".circleuser2").show().addClass("error");
-        $("#name").text("* this field must be alphabets only *").show().fadeOut(3000);
-        $("#name").show().addClass("error");
+        $(".usernamee").addClass("errorinput").removeClass("successinput");
+        $(".circleuser2").fadeIn().addClass("error");
+        $(".circleuser1").fadeOut();
+        $("#name").text("* this field must be alphabets only *").fadeIn();
+        $("#name").fadeIn().addClass("error");
         setErrorFor(username, '* this field must be alphabets only *');
         flag1 = false;
     } else {
         $(".usernamee").addClass("successinput");
-        $(".circleuser2").hide();
-        $(".circleuser1").show().addClass("success");
+        $("#name").fadeOut();
+        $(".circleuser2").fadeOut();
+        $(".circleuser1").fadeIn().addClass("success");
         setSuccessFor(username);
         flag1 = true;
     }
@@ -61,23 +68,26 @@ email.addEventListener('blur', e => {
     const val = e.target.value;
 
     if (val === '') {
-        $(".eemail").addClass("errorinput");
-        $(".circleemail2").show().addClass("error");
-        $("#eemail").text("* Email cannot be blank *").show().fadeOut(3000);
-        $("#eemail").show().addClass("error");
+        $(".eemail").addClass("errorinput").removeClass("successinput");
+        $(".circleemail2").fadeIn().addClass("error");
+        $(".circleemail1").fadeOut();
+        $("#eemail").text("* Email cannot be blank *").fadeIn();
+        $("#eemail").fadeIn().addClass("error");
         setErrorFor(email, '* Email cannot be blank *');
         flag2 = false;
     } else if (!isEmail(val)) {
-        $(".eemail").addClass("errorinput");
-        $(".circleemail2").show().addClass("error");
-        $("#eemail").text("* This email is invalid *").show().fadeOut(3000);
-        $("#eemail").show().addClass("error");
+        $(".eemail").addClass("errorinput").removeClass("successinput");
+        $(".circleemail2").fadeIn().addClass("error");
+        $(".circleemail1").fadeOut();
+        $("#eemail").text("* This email is invalid *").fadeIn();
+        $("#eemail").fadeIn().addClass("error");
         setErrorFor(email, '* Not a valid email *');
         flag2 = false;
     } else {
         $(".eemail").addClass("successinput");
-        $(".circleemail2").hide();
-        $(".circleemail1").show().addClass("success");
+        $("#eemail").fadeOut();
+        $(".circleemail2").fadeOut();
+        $(".circleemail1").fadeIn().addClass("success");
         setSuccessFor(email);
         flag2 = true;
     }
@@ -89,23 +99,26 @@ phone.addEventListener('blur', e => {
     const val = e.target.value;
 
     if (val === '') {
-        $(".phonee").addClass("errorinput");
-        $(".circlephone2").show().addClass("error");
-        $("#phonee").text("* Phone cannot be blank *").show().fadeOut(3000);
-        $("#phonee").show().addClass("error");
+        $(".phonee").addClass("errorinput").removeClass("successinput");
+        $(".circlephone2").fadeIn().addClass("error");
+        $(".circlephone1").fadeOut();
+        $("#phonee").text("* Phone cannot be blank *").fadeIn();
+        $("#phonee").fadeIn().addClass("error");
         setErrorFor(phone, '* Phone cannot be blank *');
         flag3 = false;
     } else if (val.length < 11) {
-        $(".phonee").addClass("errorinput");
-        $(".circlephone2").show().addClass("error");
-        $("#phonee").text("* This phone number is invalid *").show().fadeOut(3000);
-        $("#phonee").show().addClass("error");
+        $(".phonee").addClass("errorinput").removeClass("successinput");
+        $(".circlephone2").fadeIn().addClass("error");
+        $(".circlephone1").fadeOut();
+        $("#phonee").text("* This phone number is invalid *").fadeIn();
+        $("#phonee").fadeIn().addClass("error");
         setErrorFor(phone, '* This phone number is invalid *');
         flag3 = false;
     } else {
         $(".phonee").addClass("successinput");
-        $(".circlephone2").hide();
-        $(".circlephone1").show().addClass("success");
+        $("#phonee").fadeOut();
+        $(".circlephone2").fadeOut();
+        $(".circlephone1").fadeIn().addClass("success");
         setSuccessFor(phone);
         flag3 = true;
     }
@@ -117,23 +130,26 @@ password.addEventListener('blur', e => {
     const val = e.target.value;
     // re = /[0-9])/;
     if (val === '') {
-        $(".psw").addClass("errorinput");
-        $(".circlepsw2").show().addClass("error");
-        $("#psw").text("* Password cannot be blank *").show().fadeOut(3000);
-        $("#psw").show().addClass("error");
+        $(".psw").addClass("errorinput").removeClass("successinput");
+        $(".circlepsw2").fadeIn().addClass("error");
+        $(".circlepsw1").fadeOut();
+        $("#psw").text("* Password cannot be blank *").fadeIn();
+        $("#psw").fadeIn().addClass("error");
         setErrorFor(password, '* Password cannot be blank *');
         flag4 = false;
     } else if (val.length <= 8) {
-        $(".psw").addClass("errorinput");
-        $(".circlepsw2").show().addClass("error");
-        $("#psw").text("* your password must be at least 8 alphanumeric *").show().fadeOut(3000);
-        $("#psw").show().addClass("error");
+        $(".psw").addClass("errorinput").removeClass("successinput");
+        $(".circlepsw2").fadeIn().addClass("error");
+        $(".circlepsw1").fadeOut();
+        $("#psw").text("* your password must be at least 8 alphanumeric *").fadeIn();
+        $("#psw").fadeIn().addClass("error");
         setErrorFor(password, '* your password must be at least 8 alphanumeric *');
         flag4 = false;
     } else {
         $(".psw").addClass("successinput");
-        $(".circlepsw2").hide();
-        $(".circlepsw1").show().addClass("success");
+        $("#psw").fadeOut();
+        $(".circlepsw2").fadeOut();
+        $(".circlepsw1").fadeIn().addClass("success");
         setSuccessFor(password);
         flag4 = true;
     }
@@ -204,25 +220,29 @@ form.addEventListener('submit', e => {
     }
     else {
         alert("Your Sign Up is not Success")
-        $(".usernamee").addClass("errorinput");
-        $(".circleuser2").show().addClass("error");
-        $("#name").text("* Username cannot be blank *").show().fadeOut(3000);
-        $("#name").show().addClass("error");
+        $(".usernamee").addClass("errorinput").removeClass("successinput");
+        $(".circleuser2").fadeIn().addClass("error");
+        $(".circleuser1").fadeOut();
+        $("#name").text("* Username cannot be blank *").fadeIn();
+        $("#name").fadeIn().addClass("error");
         setErrorFor(username, '* Username cannot be blank *');
-        $(".eemail").addClass("errorinput");
-        $(".circleemail2").show().addClass("error");
-        $("#eemail").text("* Email cannot be blank *").show().fadeOut(3000);
-        $("#eemail").show().addClass("error");
+        $(".eemail").addClass("errorinput").removeClass("successinput");
+        $(".circleemail2").fadeIn().addClass("error");
+        $(".circleemail1").fadeOut();
+        $("#eemail").text("* Email cannot be blank *").fadeIn();
+        $("#eemail").fadeIn().addClass("error");
         setErrorFor(email, '* Email cannot be blank *');
-        $(".phonee").addClass("errorinput");
-        $(".circlephone2").show().addClass("error");
-        $("#phonee").text("* Phone cannot be blank *").show().fadeOut(3000);
-        $("#phonee").show().addClass("error");
+        $(".phonee").addClass("errorinput").removeClass("successinput");
+        $(".circlephone2").fadeIn().addClass("error");
+        $(".circlephone1").fadeOut();
+        $("#phonee").text("* Phone cannot be blank *").fadeIn();
+        $("#phonee").fadeIn().addClass("error");
         setErrorFor(phone, '* Phone cannot be blank *');
-        $(".psw").addClass("errorinput");
-        $(".circlepsw2").show().addClass("error");
-        $("#psw").text("* Password cannot be blank *").show().fadeOut(3000);
-        $("#psw").show().addClass("error");
+        $(".psw").addClass("errorinput").removeClass("successinput");
+        $(".circlepsw2").fadeIn().addClass("error");
+        $(".circlepsw1").fadeOut();
+        $("#psw").text("* Password cannot be blank *").fadeIn();
+        $("#psw").fadeIn().addClass("error");
         setErrorFor(password, '* Password cannot be blank *');
     }
     // checkInputs();
