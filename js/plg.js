@@ -23,9 +23,9 @@ username.addEventListener('blur', e => {
         $(".usernamee").addClass("errorinput").removeClass("successinput");
         $(".circleuser2").fadeIn().addClass("error");
         $(".circleuser1").fadeOut();
-        $("#name").text("* Username cannot be blank *").fadeIn();
+        $("#name").text("This field is required !").fadeIn();
         $("#name").fadeIn().addClass("error");
-        setErrorFor(username, '* Username cannot be blank *');
+        setErrorFor(username, 'This field is required !');
         flag1 = false;
     } else if (val.length > 40) {
         $(".usernamee").addClass("errorinput").removeClass("successinput");
@@ -71,9 +71,9 @@ email.addEventListener('blur', e => {
         $(".eemail").addClass("errorinput").removeClass("successinput");
         $(".circleemail2").fadeIn().addClass("error");
         $(".circleemail1").fadeOut();
-        $("#eemail").text("* Email cannot be blank *").fadeIn();
+        $("#eemail").text("This field is required !").fadeIn();
         $("#eemail").fadeIn().addClass("error");
-        setErrorFor(email, '* Email cannot be blank *');
+        setErrorFor(email, 'This field is required !');
         flag2 = false;
     } else if (!isEmail(val)) {
         $(".eemail").addClass("errorinput").removeClass("successinput");
@@ -102,9 +102,9 @@ phone.addEventListener('blur', e => {
         $(".phonee").addClass("errorinput").removeClass("successinput");
         $(".circlephone2").fadeIn().addClass("error");
         $(".circlephone1").fadeOut();
-        $("#phonee").text("* Phone cannot be blank *").fadeIn();
+        $("#phonee").text("This field is required !").fadeIn();
         $("#phonee").fadeIn().addClass("error");
-        setErrorFor(phone, '* Phone cannot be blank *');
+        setErrorFor(phone, 'This field is required !');
         flag3 = false;
     } else if (val.length < 11) {
         $(".phonee").addClass("errorinput").removeClass("successinput");
@@ -133,9 +133,9 @@ password.addEventListener('blur', e => {
         $(".psw").addClass("errorinput").removeClass("successinput");
         $(".circlepsw2").fadeIn().addClass("error");
         $(".circlepsw1").fadeOut();
-        $("#psw").text("* Password cannot be blank *").fadeIn();
+        $("#psw").text("This field is required !").fadeIn();
         $("#psw").fadeIn().addClass("error");
-        setErrorFor(password, '* Password cannot be blank *');
+        setErrorFor(password, 'This field is required !');
         flag4 = false;
     } else if (val.length <= 8) {
         $(".psw").addClass("errorinput").removeClass("successinput");
@@ -223,27 +223,27 @@ form.addEventListener('submit', e => {
         $(".usernamee").addClass("errorinput").removeClass("successinput");
         $(".circleuser2").fadeIn().addClass("error");
         $(".circleuser1").fadeOut();
-        $("#name").text("* Username cannot be blank *").fadeIn();
+        $("#name").text("* This field is required ! *").fadeIn();
         $("#name").fadeIn().addClass("error");
         setErrorFor(username, '* Username cannot be blank *');
         $(".eemail").addClass("errorinput").removeClass("successinput");
         $(".circleemail2").fadeIn().addClass("error");
         $(".circleemail1").fadeOut();
-        $("#eemail").text("* Email cannot be blank *").fadeIn();
+        $("#eemail").text("This field is required !").fadeIn();
         $("#eemail").fadeIn().addClass("error");
-        setErrorFor(email, '* Email cannot be blank *');
+        setErrorFor(email, 'This field is required !');
         $(".phonee").addClass("errorinput").removeClass("successinput");
         $(".circlephone2").fadeIn().addClass("error");
         $(".circlephone1").fadeOut();
-        $("#phonee").text("* Phone cannot be blank *").fadeIn();
+        $("#phonee").text("This field is required !").fadeIn();
         $("#phonee").fadeIn().addClass("error");
-        setErrorFor(phone, '* Phone cannot be blank *');
+        setErrorFor(phone, 'This field is required !');
         $(".psw").addClass("errorinput").removeClass("successinput");
         $(".circlepsw2").fadeIn().addClass("error");
         $(".circlepsw1").fadeOut();
-        $("#psw").text("* Password cannot be blank *").fadeIn();
+        $("#psw").text("This field is required !").fadeIn();
         $("#psw").fadeIn().addClass("error");
-        setErrorFor(password, '* Password cannot be blank *');
+        setErrorFor(password, 'This field is required !');
     }
     // checkInputs();
 });
@@ -264,3 +264,27 @@ function isEmail(email) {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyBpAhvxKqp7_0bK2lJTC4gbV5bdyZvzdyc",
+    authDomain: "car-owner-registration.firebaseapp.com",
+    databaseURL: "https://car-owner-registration.firebaseio.com",
+    projectId: "car-owner-registration",
+    storageBucket: "car-owner-registration.appspot.com",
+    messagingSenderId: "1018908817794",
+    appId: "1:1018908817794:web:b4e82515be5d09a6b8b79b",
+    measurementId: "G-2BXTKW75Q8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  const auth = firebase.auth();
+  function signUp() {
+      var email = document.getElementById("email");
+      var password = document.getElementById("password");
+      const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+		promise.catch(e => alert(e.message));
+		
+		alert("Signed Up");
+  }

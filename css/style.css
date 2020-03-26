@@ -15,7 +15,7 @@ body {
 	border-radius: 5px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	overflow: hidden;
-	width: 400px;
+	width: 500px;
 	max-width: 100%;
 	animation-duration: 2s;
     animation-delay: 0.5s;
@@ -56,14 +56,6 @@ body {
 	outline: 0;
 	border-color: #777;
 }
-
-/* .form-control.success input {
-	border-color: #2ecc71;
-}
-
-.form-control.error input {
-	border-color: #e74c3c;
-} */
 
 .form-control i {
     display: none;
